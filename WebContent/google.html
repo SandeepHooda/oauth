@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="google-signin-client_id" content="140214647064-qoagn8ns08r6454hsp4cnndp0qtb1uv1.apps.googleusercontent.com">
+<link rel="stylesheet" type="text/css"  href="css/google.css">
+ </head>
+<body>
+<div class="oauth-button"  >
+		  	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signin" name="signin" ></div>
+		     <button disabled class="signout-btn" id="signout" name="signout"  onclick="handleSignOut()">Sign Out</button>
+		     
+   		</div>
+
+<div >
+   		
+   		<img id="googleInfoImg" name="googleInfoImg" alt="" src="images/city.png" />
+   		Welcome <span id="googleInfo"></span>
+</div>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+ <script src="js/google-auth.js"></script>
+</body>
+</html>
