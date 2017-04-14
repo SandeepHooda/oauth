@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="google-signin-client_id" content="140214647064-qoagn8ns08r6454hsp4cnndp0qtb1uv1.apps.googleusercontent.com">
+<link rel="stylesheet" type="text/css"  href="css/facebook.css">
+ </head>
+<body>
+	<div class="oauth-button"  >
+		<fb:login-button   scope="public_profile,email"  onlogin="checkLoginState();" id="signin" name="signin"> </fb:login-button>
+		<button disabled class="signout-btn" id="signout" name="signout"  onclick="handleSignOut()">Sign Out</button>
+	</div>
+
+<div >
+   		
+   		<img id="InfoImg" name="googleInfoImg" alt="" src="images/city.png" />
+   		Welcome <span id="loginInfo"></span>
+</div>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+ <script src="js/facebook.js"></script>
+</body>
+</html>

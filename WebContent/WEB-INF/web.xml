@@ -19,7 +19,7 @@
     <servlet-name>Oauth_sandeepServlet</servlet-name>
     <url-pattern>/oauth_sandeep</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <description>GAuth</description>
     <display-name>GAuth</display-name>
     <servlet-name>GAuth</servlet-name>
@@ -28,5 +28,15 @@
   <servlet-mapping>
     <servlet-name>GAuth</servlet-name>
     <url-pattern>/GAuth</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FbookAuth</display-name>
+    <servlet-name>FbookAuth</servlet-name>
+    <servlet-class>com.facebook.FbookAuth</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FbookAuth</servlet-name>
+    <url-pattern>/FbookAuth</url-pattern>
   </servlet-mapping>
 </web-app>
