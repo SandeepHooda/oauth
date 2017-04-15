@@ -9,10 +9,14 @@
 	<div class="oauth-button"  >
 		<form action="/GitHub/Step0GetTempAuthCode">
 	  		
-	  		<input type="submit" value="Sign in" class="signin-btn"  onclick="Login();" id="signin" name="signin"></input>
+	  		<input type="submit" value="Sign in" class="signin-btn"   id="signin" name="signin"></input>
+		</form>
+		<form action="/GitHub/SignOut">
+	  		
+	  		<input disabled type="submit" value="Sign out" class="signout-btn" id="signout" name="signout"></input>
 		</form>
 		
-		<button disabled class="signout-btn" id="signout" name="signout"  onclick="handleSignOut()">Sign Out</button>
+		
 	</div>
 
 <div >
