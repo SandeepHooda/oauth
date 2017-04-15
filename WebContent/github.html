@@ -3,10 +3,15 @@
 <head>
 <meta name="google-signin-client_id" content="140214647064-qoagn8ns08r6454hsp4cnndp0qtb1uv1.apps.googleusercontent.com">
 <link rel="stylesheet" type="text/css"  href="css/facebook.css">
+<link rel="stylesheet" type="text/css"  href="css/github.css">
  </head>
 <body>
 	<div class="oauth-button"  >
-		<fb:login-button   scope="public_profile,email"  onlogin="checkLoginState();" id="signin" name="signin"> </fb:login-button>
+		<form action="/GitHub/Step0GetTempAuthCode">
+	  		
+	  		<input type="submit" value="Sign in" class="signin-btn"  onclick="Login();" id="signin" name="signin"></input>
+		</form>
+		
 		<button disabled class="signout-btn" id="signout" name="signout"  onclick="handleSignOut()">Sign Out</button>
 	</div>
 
@@ -17,6 +22,6 @@
 </div>
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
- <script src="js/facebook.js"></script>
+ <script src="js/github.js"></script>
 </body>
 </html>
