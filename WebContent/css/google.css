@@ -42,7 +42,7 @@ width:140px;
     line-height: 30px;
  }
  
- #signin, #signout {
+ #signin, #signout, #googleInfoImg, #welcomeMsg {
  display:none;
  }
  

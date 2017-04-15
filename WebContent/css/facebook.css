@@ -12,7 +12,7 @@ width:140px;
     line-height: 20px;
  }
  
- #signin, #signout {
+ #signin, #signout, #InfoImg, #welcomeMsg {
  display:none;
  }
  

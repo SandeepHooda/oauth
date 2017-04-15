@@ -7,8 +7,8 @@
     line-height: 20px;
  }
  
- #signin {
- display:block;
+ #signin, #signout {
+ display:none;
  }
  
  

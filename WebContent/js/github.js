@@ -6,14 +6,17 @@
 	        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
 	           if (xmlhttp.status == 200) {
 	        	  
-	        	   var resp =  JSON.parse(xmlhttp.responseText);
-	        	   if (resp.name){
-	        		   userSignStatus(true);
-	        		   document.getElementById("loginInfo").innerHTML =resp.name ;
-	                   document.getElementById("InfoImg").src=resp.avatar_url;
-	                  
+	        	   if(xmlhttp.responseText){
+	        		   var resp =  JSON.parse(xmlhttp.responseText);
+		        	   if (resp.name){
+		        		   userSignStatus(true);
+		        		   document.getElementById("loginInfo").innerHTML =resp.name ;
+		                   document.getElementById("InfoImg").src=resp.avatar_url;
+		                  
 
-	        	   }else {
+		        	   }
+	        	   }
+	        	   else {
 	        		   userSignStatus(false);
 	        	   }
 
@@ -44,6 +47,9 @@
 		        document.getElementById("signout").style.display = "none";
 		        document.getElementById("loginInfo").innerHTML ="Guest";
 		}
+		
+		document.getElementById("InfoImg").style.display = "block";
+		document.getElementById("welcomeMsg").style.display = "inline-block";
 		
 	}
  

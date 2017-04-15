@@ -76,7 +76,10 @@
 		        document.getElementById("signin").style.display = "block";
 		        document.getElementById("signout").style.display = "none";
 		        document.getElementById("loginInfo").innerHTML ="Guest";
+		        
 		}
+		document.getElementById("InfoImg").style.display = "block";
+		document.getElementById("welcomeMsg").style.display = "inline-block";
 		
 	}
   function handleSignOut(){
@@ -90,9 +93,12 @@
   
 
   function checkLoginState() {
-	  userSignStatus(false);
+	  initStatus = setTimeout(function(){  userSignStatus(false); }, 3000);
+	  
 	    FB.getLoginStatus(function(response) {
+	    	clearTimeout(initStatus);
 	      statusChangeCallback(response);
+	      
 	    });
 	  }
 window.onload = function() {

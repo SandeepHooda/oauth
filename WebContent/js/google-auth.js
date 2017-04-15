@@ -42,6 +42,8 @@ function userSignStatus(signedIn){
 	        document.getElementById("googleInfo").innerHTML ="Guest";
 	}
 	
+	document.getElementById("googleInfoImg").style.display = "block";
+	document.getElementById("welcomeMsg").style.display = "inline-block";
 }
 
     function onSignIn(googleUser) {
