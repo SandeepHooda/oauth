@@ -46,7 +46,7 @@ public class Step1GetAccessToken extends HttpServlet {
 		/*
 		 * Use the code from previous step to exchange access token
 		 */
-		String urlParameters  = "client_id=ca9ff4fb657deb4f4f4c&client_secret=2f98478deaf1c491c6a189250c6f2d1f9258d93a&code="+request.getParameter("code")+"&redirect_uri=https://oauth-sandeep.appspot.com/GitHub/Step2ParseUserInfo&state=1";
+		String urlParameters  = "client_id=ca9ff4fb657deb4f4f4c&client_secret=2f98478deaf1c491c6a189250c6f2d1f9258d93a&code="+request.getParameter("code")+"&state=1";
 		byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
 		int    postDataLength = postData.length;
 		
@@ -81,7 +81,8 @@ public class Step1GetAccessToken extends HttpServlet {
 	      }
 	      reader.close();
 	     
-	      URL accessUrl = new URL("https://oauth-sandeep.appspot.com/GitHub/Step2ParseUserInfo?"+response.toString()  );
+	      URL accessUrl = new URL("https://oauth-sandeep.appspot.com/someDummyUrl?"+response.toString()  );
+	      System.out.println(" dummy accessUrl  "+accessUrl);
 	      Map<String, String> accessTokanMap =splitQuery(accessUrl);
 	      /*
 	       * Use the access tojen to get user details
@@ -90,6 +91,13 @@ public class Step1GetAccessToken extends HttpServlet {
 	      Cookie cookie = new Cookie("userdetails",message);
 	      cookie.setMaxAge(60*60*24); 
 	      res.addCookie(cookie);
+	      
+	      Cookie cookieAccess = new Cookie("cookieAccess",accessTokanMap.get("access_token"));
+	      cookieAccess.setMaxAge(60*60*24); 
+	      res.addCookie(cookieAccess);
+	      Cookie cookieAccessRefresh = new Cookie("cookieAccessRefresh",accessTokanMap.get("refresh_token"));
+	      cookieAccessRefresh.setMaxAge(60*60*24); 
+	      res.addCookie(cookieAccessRefresh);
 	     // request.getSession().setAttribute("userdetails", message);
 	      
 	    } else {

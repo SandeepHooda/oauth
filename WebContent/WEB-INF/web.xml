@@ -79,4 +79,44 @@
     <servlet-name>SignOut</servlet-name>
     <url-pattern>/GitHub/SignOut</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Step1GetAuthCode</display-name>
+    <servlet-name>Step1GetAuthCode</servlet-name>
+    <servlet-class>com.github.Alexa.Step1GetAuthCode</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Step1GetAuthCode</servlet-name>
+    <url-pattern>/Alexa/Step1GetAuthCode</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Step2GetAccessToken</display-name>
+    <servlet-name>Step2GetAccessToken</servlet-name>
+    <servlet-class>com.github.Alexa.Step2GetAccessToken</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Step2GetAccessToken</servlet-name>
+    <url-pattern>/Alexa/Step2GetAccessToken</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Step1_1SendaccessCode</display-name>
+    <servlet-name>Step1_1SendaccessCode</servlet-name>
+    <servlet-class>com.github.Alexa.Step1_1SendaccessCode</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Step1_1SendaccessCode</servlet-name>
+    <url-pattern>/Alexa/Step1_1SendaccessCode</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetUserViaToken</display-name>
+    <servlet-name>GetUserViaToken</servlet-name>
+    <servlet-class>com.github.GetUserViaToken</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetUserViaToken</servlet-name>
+    <url-pattern>/GitHub/GetUserViaToken</url-pattern>
+  </servlet-mapping>
 </web-app>
