@@ -30,24 +30,30 @@ public class GetUserViaToken extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse res) throws ServletException, IOException {
 		String access_token = request.getParameter("access_token");  
 		 StringBuffer json = new StringBuffer();
-		try {
-			URL url = new URL("https://api.github.com/user?access_token="+access_token );
-			 BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-			
-			 String line;
+		 
+		 if (null != access_token){
+			 try {
+					URL url = new URL("https://api.github.com/user?access_token="+access_token );
+					 BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+					
+					 String line;
 
-			 while ((line = reader.readLine()) != null) {
-			   json.append(line);
-			 }
-			 reader.close();
-			
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-			
-		} 
+					 while ((line = reader.readLine()) != null) {
+					   json.append(line);
+					 }
+					 reader.close();
+					
+				} catch (Exception e) {
+					
+					e.printStackTrace();
+					
+				} 
+		 }else {
+			 json = new StringBuffer("{}");
+		 }
 		
-		res.setContentType("application/json");
+		
+		 res.setContentType("application/json");
 		 res.getWriter().println(json.toString());
 	}
 
