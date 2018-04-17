@@ -3,3 +3,4 @@ build/classes/com/GAuth.class
 build/classes/*/*.class
 build/classes/com/*/*.class
 build/classes/com/*.class
+/build/classes/com/**/*.class

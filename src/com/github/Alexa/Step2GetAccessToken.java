@@ -55,7 +55,11 @@ public class Step2GetAccessToken extends HttpServlet {
 				if (null == token) {
 					token = request.getParameter("access_token"); 
 				}
-				 log.info("Token received in request"+token);
+				log.info("Step2GetAccessToken ");
+				log.info("state "+state);
+				log.info("access_token "+request.getParameter("client_id"));
+				log.info("client_id "+state);
+				log.info("state "+state);
 				if (null != token){
 					//https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=AAAAAAAAAAAAAA#state=xyz&access_token=2YotnFZFEjr1zCsicMWpAA&token_type=Bearer
 					res.sendRedirect("https://pitangui.amazon.com/spa/skill/account-linking-status.html?vendorId=MYFQ2S2E4F1Y#state="+state+"&access_token="+token+"&token_type=Bearer");

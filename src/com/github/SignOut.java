@@ -35,6 +35,7 @@ public class SignOut extends HttpServlet {
 			 }
 		 }
 		 
+		 request.getSession().invalidate();
 		 response.sendRedirect("/github.html");
 	}
 

@@ -33,6 +33,8 @@ public class Step1GetAuthCode extends HttpServlet {
 		String redirect_uri =  request.getParameter("redirect_uri");
 		
 		String client_id = request.getParameter("client_id");
+		log.info("Step1GetAuthCode ");
+		log.info("state "+state);
 		log.info("client_id "+client_id);
 		String urlRedirect = "https://github.com/login/oauth/authorize?client_id="+client_id+"&scope=user&response_type=token&state="+state ;
 		res.sendRedirect(urlRedirect);
